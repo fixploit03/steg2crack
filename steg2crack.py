@@ -25,26 +25,27 @@ print(f"""
 {p}***********************************************************
 {r}""")
 
-stego_file_path = input(f"{p}[{b}#{p}] Enter the Stego file path: ")
+file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
-if not os.path.isfile(stego_file_path):
-    print(f"{p}[{m}-{p}] Stego file '{stego_file_path}' not found.{r}")
+if not os.path.isfile(file_stego):
+    print(f"{p}[{m}-{p}] File Stego '{file_stego}' tidak ditemukan.{r}")
     exit(1)
     
-wordlist_file_path = input(f"{p}[{b}#{p}] Enter the Wordlist file path: ")
+file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
 
-if not os.path.isfile(wordlist_file_path):
-    print(f"{p}[{m}-{p}] Wordlist file '{wordlist_file_path}' not found.{r}")
+if not os.path.isfile(file_wordlist):
+    print(f"{p}[{m}-{p}] File Wordlist '{file_wordlist}' tidak ditemukan.{r}")
     exit(1)
 
 print("")
 
-password_found = False
+kata_sandi_ditemukan = False
 
-with open(wordlist_file_path, "r", encoding="latin-1", errors="ignore") as wf:
-    password_list = wf.read().splitlines()
-    total_password = len(password_list)
-    print(f"{p}[{b}*{p}] Total password in Wordlist file : {b}{total_password}{r}")
+with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
+    daftar_kata_sandi = fw.read().splitlines()
+    jumlah_kata_sandi = len(daftar_kata_sandi)
+    print(f"{p}[{b}*{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {b}{jumlah_kata_sandi}{r}")
+    input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
     for password in password_list:
         command = f"steghide extract -sf {stego_file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
