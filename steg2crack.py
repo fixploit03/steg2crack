@@ -19,4 +19,4 @@ with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
             break
         else:
             print(f"Incorrcet password: {password}")
-    print("Password not found, try a different wordlist.")
+print("Password not found, try a different wordlist.")
