@@ -26,10 +26,10 @@ with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
         command = f"steghide extract -sf {file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
-            print(f"[+] Password found: {password}") 
+            print(f"{p}[{h}+{p}] Password found: {h}{password}{r}") 
             password_found = True 
             break
         else:
-            print(f"[-] Incorrcet password: {password}")
+            print(f"{p}[{m}-{p}] Incorrcet password: {m}{password}{r}")
 if not password_found:
-    print("Password not found, try a different wordlist.")
+    print(f"{p}[{m}-{p}] Password not found, try a different wordlist.{r}")
