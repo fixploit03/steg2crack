@@ -20,6 +20,16 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Reset 
 
+print("""
+     _                                 _
+ ___| |_ ___  __ _  ___ _ __ __ _  ___| | _____ _ __
+/ __| __/ _ \/ _` |/ __| '__/ _` |/ __| |/ / _ \ '__|
+\__ \ ||  __/ (_| | (__| | | (_| | (__|   <  __/ |
+|___/\__\___|\__, |\___|_|  \__,_|\___|_|\_\___|_|
+             |___/ 
+             
+      https://github.com/fixploit03/steg2crack/""")
+
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
 if not os.path.isfile(file_stego):
