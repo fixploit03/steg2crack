@@ -4,6 +4,7 @@
 ## Author: fixploit03 
 ## Date: 2024-10-05
 
+import os
 import subprocess           
 
 ## Variabel warna
