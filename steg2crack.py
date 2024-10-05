@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
-## Title: Steghide Password Cracking Script
-## Author: fixploit03 
-## Date: 2024-10-05
+## Program   : steg2crack
+## Deskripsi : Program python3 sederhana yang dirancang untuk meng-crack file Stego.
+## Pembuat   : fixploit03 
+## Rilis     : 5-10-2024
+## Github    : https://github.com/fixploit03/steg2crack/
 
 import os
 import subprocess           
@@ -17,12 +19,12 @@ p = "\033[37m" # Putih
 r = "\033[0m"  # Biru
 
 print(f"""
-{p}***********************************************************
-{p}* {c}Program     {p}: {c}steg2crack                                {p}*
-{p}* {c}description {p}: {c}Steghide Password Cracking Script         {p}*
-{p}* {c}Author      {p}: {c}fixploit03                                {p}*
-{p}* {c}Github      {p}: {c}https://github.com/fixploit03/steg2crack/ {p}*
-{p}***********************************************************
+{p}***************************************************************************************
+{p}* {c}Program     {p}: {c}steg2crack                                                            {p}*
+{p}* {c}Deskripsi   {p}: {c}Program python3 sederhana yang dirancang untuk meng-crack file Stego. {p}*
+{p}* {c}Pembuat     {p}: {c}fixploit03                                                            {p}*
+{p}* {c}Github      {p}: {c}https://github.com/fixploit03/steg2crack/                             {p}*
+{p}***************************************************************************************
 {r}""")
 
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
