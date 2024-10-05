@@ -46,14 +46,14 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     jumlah_kata_sandi = len(daftar_kata_sandi)
     print(f"{p}[{b}*{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {b}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
-    for password in password_list:
-        command = f"steghide extract -sf {stego_file_path} -p {password} -f"
-        result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if result.returncode == 0:
-            print(f"{p}[{h}+{p}] Password found : {h}{password}{r}") 
-            password_found = True 
+    for kata_sandi in daftar_kata_sandi:
+        perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
+        hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if hasil.returncode == 0:
+            print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
+            kata_sandi_ditemukan = True 
             break
         else:
-            print(f"{p}[{m}-{p}] Incorrcet password : {m}{password}{r}")
-if not password_found:
-    print(f"{p}[{m}-{p}] Password not found, try a different wordlist.{r}")
+            print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
+if not kata_sandi_ditemukan:
+    print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
