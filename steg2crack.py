@@ -15,12 +15,12 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Biru
 
-print("""
------------------------------------------------
-Steghide Password Cracking Script by fixploit03
-(https://github.com/fixploit03/steg2crack/)
------------------------------------------------
-""")
+print(f"""
+{p}-----------------------------------------------
+{c}Steghide Password Cracking Script by fixploit03
+{p}(https://github.com/fixploit03/steg2crack/)
+{p}-----------------------------------------------
+{r}""")
 
 file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
 wordlist_path = input(f"{p}[{b}#{p}] Enter the wordlist file path: ")
