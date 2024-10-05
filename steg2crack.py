@@ -10,9 +10,9 @@ import subprocess
 m = "\033[31m" # Merah
 h = "\033[32m" # Hijau 
 k = "\033[33m" # Kuning 
-b = "\033[32m" # Biru
-c = "\033[32m" # Cyan
-p = "\033[32m" # Putih 
+b = "\033[34m" # Biru
+c = "\033[36m" # Cyan
+p = "\033[37m" # Putih 
 r = "\033[0m"  # Biru
 
 file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
