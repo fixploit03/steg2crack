@@ -17,10 +17,10 @@ r = "\033[0m"  # Biru
 
 print(f"""
 {p}***********************************************************
-{p}* Program     : steg2crack                                *
-{p}* description : Steghide Password Cracking Script         *
-{c}* Author      : fixploit03                                *
-{p}* Github      : https://github.com/fixploit03/steg2crack/ *
+{p}* {k}Program     {p}: {k}steg2crack                                {p}*
+{p}* {k}description {p}: {k}Steghide Password Cracking Script         {p}*
+{p}* {k}Author      {p}: {k}fixploit03                                {p}*
+{p}* {k}Github      {p}: {k}https://github.com/fixploit03/steg2crack/ {p}*
 {p}***********************************************************
 {r}""")
 
