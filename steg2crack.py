@@ -18,7 +18,7 @@ k = "\033[33m" # Kuning
 b = "\033[34m" # Biru
 c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
-r = "\033[0m"  # Biru
+r = "\033[0m"  # Reset 
 
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
