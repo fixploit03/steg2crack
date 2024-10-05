@@ -16,10 +16,12 @@ p = "\033[37m" # Putih
 r = "\033[0m"  # Biru
 
 print(f"""
-{p}-----------------------------------------------
-{c}Steghide Password Cracking Script by fixploit03
-{p}(https://github.com/fixploit03/steg2crack/)
-{p}-----------------------------------------------
+{p}***********************************************************
+{p}* Program     : steg2crack                                *
+{p}* description : Steghide Password Cracking Script         *
+{c}* Author      : fixploit03                                *
+{p}* Github      : https://github.com/fixploit03/steg2crack/ *
+{p}***********************************************************
 {r}""")
 
 file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
