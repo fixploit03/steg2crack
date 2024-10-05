@@ -29,8 +29,13 @@ stego_file_path = input(f"{p}[{b}#{p}] Enter the Stego file path: ")
 
 if not os.path.isfile(stego_file_path):
     print(f"{p}[{m}-{p}] Stego file '{stego_file_path}' not found.{r}")
-
+    exit(1)
+    
 wordlist_file_path = input(f"{p}[{b}#{p}] Enter the Wordlist file path: ")
+
+if not os.path.isfile(wordlist_file_path):
+    print(f"{p}[{m}-{p}] Wordlist file '{wordlist_file_path}' not found.{r}")
+    exit(1)
 
 print("")
 
