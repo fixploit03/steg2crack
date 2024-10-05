@@ -6,6 +6,9 @@
 
 import subprocess           
 
+## Variabel warna
+m = "\033[31m" # Merah
+
 file_path = input("Enter the Steghide file path: ")
 wordlist_path = input("Enter the wordlist file path: ")
 
@@ -21,6 +24,6 @@ with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
             password_found = True 
             break
         else:
-            print(f"Incorrcet password: {password}")
+            print(f"{m}Incorrcet password: {password}")
 if not password_found:
     print("Password not found, try a different wordlist.")
