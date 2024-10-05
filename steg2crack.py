@@ -25,6 +25,10 @@ print(f"""
 {r}""")
 
 stego_file_path = input(f"{p}[{b}#{p}] Enter the Stego file path: ")
+
+if not os.path.isfile(stego_file_path):
+    print(f"{p}[{m}-{p}] Stego file '{stego_file_path}' not found.{r}")
+
 wordlist_file_path = input(f"{p}[{b}#{p}] Enter the Wordlist file path: ")
 
 print("")
