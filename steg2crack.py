@@ -15,8 +15,8 @@ c = "\033[32m" # Cyan
 p = "\033[32m" # Putih 
 r = "\033[0m"  # Biru
 
-file_path = input("Enter the Steghide file path: ")
-wordlist_path = input("Enter the wordlist file path: ")
+file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
+wordlist_path = input(f"{p}[{b}#{p}] Enter the wordlist file path: ")
 
 password_found = False
 
@@ -26,10 +26,10 @@ with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
         command = f"steghide extract -sf {file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
-            print(f"{h}Password found: {password}") 
+            print(f"[+] Password found: {password}") 
             password_found = True 
             break
         else:
-            print(f"{m}Incorrcet password: {password}")
+            print(f"[-] Incorrcet password: {password}")
 if not password_found:
     print("Password not found, try a different wordlist.")
