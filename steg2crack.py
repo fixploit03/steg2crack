@@ -50,10 +50,12 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         if hasil.returncode == 0:
             waktu_akhir = datetime.now()
             print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
-            print(f"{p}[{b}*{p}] Berakhir pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+            print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
             kata_sandi_ditemukan = True 
             break
         else:
             print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
 if not kata_sandi_ditemukan:
+    waktu_akhir = datetime.now()
     print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
+    print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
