@@ -43,14 +43,16 @@ password_found = False
 
 with open(wordlist_file_path, "r", encoding="latin-1", errors="ignore") as wf:
     password_list = wf.read().splitlines()
+    total_password = len(password_list)
+    print(f"{p}[{b}*{p}] Total password in Wordlist file : {b}{total_password}{r}")
     for password in password_list:
         command = f"steghide extract -sf {stego_file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
-            print(f"{p}[{h}+{p}] Password found: {h}{password}{r}") 
+            print(f"{p}[{h}+{p}] Password found : {h}{password}{r}") 
             password_found = True 
             break
         else:
-            print(f"{p}[{m}-{p}] Incorrcet password: {m}{password}{r}")
+            print(f"{p}[{m}-{p}] Incorrcet password : {m}{password}{r}")
 if not password_found:
     print(f"{p}[{m}-{p}] Password not found, try a different wordlist.{r}")
