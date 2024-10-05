@@ -24,17 +24,17 @@ print(f"""
 {p}***********************************************************
 {r}""")
 
-file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
-wordlist_path = input(f"{p}[{b}#{p}] Enter the wordlist file path: ")
+stego_file_path = input(f"{p}[{b}#{p}] Enter the Stego file path: ")
+wordlist_file_path = input(f"{p}[{b}#{p}] Enter the Wordlist file path: ")
 
 print("")
 
 password_found = False
 
-with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
-    for line in f:
-        password = line.strip()  
-        command = f"steghide extract -sf {file_path} -p {password} -f"
+with open(wordlist_file_path, "r", encoding="latin-1", errors="ignore") as wf:
+    password_list = fw.read().splitlines()
+    for password in password_list:
+        command = f"steghide extract -sf {stego_file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
             print(f"{p}[{h}+{p}] Password found: {h}{password}{r}") 
