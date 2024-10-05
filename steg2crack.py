@@ -9,7 +9,7 @@ import sys                      # Provides access to command-line arguments
 import subprocess               # Allows executing shell commands
 import argparse                 # For parsing command-line arguments
 import textwrap                 # For formatting text
-from pwn import *              # Importing the pwn module for logging and progress tracking
+from pwn import *               # Importing the pwn module for logging and progress tracking
 
 # Set up argument parser for the script
 parser = argparse.ArgumentParser(description="Steghide Password Cracking Script by fixploit03", 
