@@ -32,7 +32,7 @@ print("")
 password_found = False
 
 with open(wordlist_file_path, "r", encoding="latin-1", errors="ignore") as wf:
-    password_list = fw.read().splitlines()
+    password_list = wf.read().splitlines()
     for password in password_list:
         command = f"steghide extract -sf {stego_file_path} -p {password} -f"
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
