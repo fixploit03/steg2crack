@@ -20,15 +20,6 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Biru
 
-print(f"""
-{p}***************************************************************************************
-{p}* {c}Program     {p}: {c}steg2crack                                                            {p}*
-{p}* {c}Deskripsi   {p}: {c}Program python3 sederhana yang dirancang untuk meng-crack file Stego. {p}*
-{p}* {c}Pembuat     {p}: {c}fixploit03                                                            {p}*
-{p}* {c}Github      {p}: {c}https://github.com/fixploit03/steg2crack/                             {p}*
-{p}***************************************************************************************
-{r}""")
-
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
 if not os.path.isfile(file_stego):
@@ -51,7 +42,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     waktu_mulai = datetime.now()
     print(f"{p}[{b}*{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {b}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
-    print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+    print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
         perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
@@ -59,7 +50,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         if hasil.returncode == 0:
             waktu_akhir = datetime.now()
             print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
-            print(f"{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+            print(f"{p}[{b}*{p}] Berakhir pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}")
             kata_sandi_ditemukan = True 
             break
         else:
