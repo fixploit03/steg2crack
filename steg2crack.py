@@ -33,6 +33,16 @@ if len(sys.argv) < 2:
 file_path = args.file
 wordlist_path = args.wordlist
 
+# Check if the Steghide file exists
+if not os.path.isfile(file_path):
+    log.failure(f"Steghide file not found: {file_path}")
+    sys.exit(1)
+
+# Check if the wordlist file exists
+if not os.path.isfile(wordlist_path):
+    log.failure(f"Wordlist file not found: {wordlist_path}")
+    sys.exit(1)
+
 # Initialize a variable to track if the password is found
 password_found = False  
 
@@ -65,10 +75,6 @@ try:
     # If no password was found after trying all options
     if not password_found:
         log.failure("Oops! Password not found, try a different wordlist.")
-except FileNotFoundError:
-    # Handle case where the wordlist file does not exist
-    log.failure(f"File not found: {wordlist_path}")
-    sys.exit(1)  # Exit the script with an error code
 except Exception as e:
     # Handle any other exceptions that may occur
     log.failure(f"An error occurred: {e}")
