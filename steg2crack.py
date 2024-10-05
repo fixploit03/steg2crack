@@ -8,6 +8,7 @@
 
 import os
 import subprocess           
+from datetime import datetime
 
 ## Variabel warna
 m = "\033[31m" # Merah
@@ -46,8 +47,10 @@ kata_sandi_ditemukan = False
 with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     daftar_kata_sandi = fw.read().splitlines()
     jumlah_kata_sandi = len(daftar_kata_sandi)
+    waktu_mulai = datetime.now()
     print(f"{p}[{b}*{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {b}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
+    print(f"[*] Dimulai pada : {waktu_mulai.strftime("%d-%m-%Y %H:%M:%S")}")
     for kata_sandi in daftar_kata_sandi:
         perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
