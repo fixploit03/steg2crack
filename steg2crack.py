@@ -46,7 +46,7 @@ print()
 
 # Try to open the wordlist file and iterate through each password
 try:
-    with open(wordlist_path, 'r') as f:
+    with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
         for line in f:
             password = line.strip()  # Remove any leading/trailing whitespace from the password
             # Construct the shell command to attempt password extraction with Steghide
