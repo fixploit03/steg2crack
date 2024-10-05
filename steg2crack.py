@@ -18,6 +18,8 @@ r = "\033[0m"  # Biru
 file_path = input(f"{p}[{b}#{p}] Enter the Steghide file path: ")
 wordlist_path = input(f"{p}[{b}#{p}] Enter the wordlist file path: ")
 
+print("")
+
 password_found = False
 
 with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
