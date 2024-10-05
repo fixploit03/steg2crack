@@ -9,6 +9,8 @@ import subprocess
 file_path = input("Enter the Steghide file path: ")
 wordlist_path = input("Enter the wordlist file path: ")
 
+password_found = False
+
 with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
     for line in f:
         password = line.strip()  
@@ -16,7 +18,9 @@ with open(wordlist_path, "r", encoding="latin-1", errors="ignore") as f:
         result = subprocess.run(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if result.returncode == 0:
             print(f"Password found: {password}") 
+            password_found = True 
             break
         else:
             print(f"Incorrcet password: {password}")
-print("Password not found, try a different wordlist.")
+if not password_found:
+    print("Password not found, try a different wordlist.")
