@@ -34,6 +34,7 @@ import time
 import platform
 from datetime import datetime
 from colorama import Fore, Style 
+
 ## Variabel warna
 m = Fore.LIGHTRED_EX    # Merah
 h = Fore.LIGHTGREEN_EX  # Hijau
