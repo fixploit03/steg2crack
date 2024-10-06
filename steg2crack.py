@@ -51,7 +51,20 @@ if sistem_operasi == "Linux":
 # Windows
 elif sistem_operasi == "Windows":
     os.system("cls")
-    
+print("""
+                             ,
+      ,-.       _,---._ __  / \
+     /  )    .-'       `./ /   \
+    (  (   ,'            `/    /|
+     \  `-"             \'\   / |
+      `.              ,  \ \ /  |
+       /`.          ,'-`----Y   |
+      (            ;        |   '
+      |  ,-.    ,-'         |  /
+      |  | (   |        hjw | /
+      )  |  \  `.___________|/
+      `--'   `--'
+          """)
 print(f"{p}[{b}*{p}] Mengecek steghide...{r}")
 time.sleep(3)
 
