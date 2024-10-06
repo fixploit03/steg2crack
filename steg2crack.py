@@ -7,12 +7,9 @@
 ## Github    : https://github.com/fixploit03/steg2crack/
 
 import os
-import re
 import subprocess           
 import time
-import shutil
 from datetime import datetime
-from pathlib import Path
 
 ## Variabel warna
 m = "\033[31m" # Merah
