@@ -33,6 +33,15 @@ import subprocess
 import time
 from datetime import datetime
 
+## Variabel warna
+m = "\033[31m" # Merah
+h = "\033[32m" # Hijau 
+k = "\033[33m" # Kuning 
+b = "\033[34m" # Biru
+c = "\033[36m" # Cyan
+p = "\033[37m" # Putih 
+r = "\033[0m"  # Reset 
+
 # Cek steghide 
 cek = f"steghide --version"
 hasil_cek = subprocess.run(cek, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -44,15 +53,6 @@ if hasil_cek.returncode == 0:
 else:
     print("[-] Steghide belum terinstal.")
     exit(1)
-
-## Variabel warna
-m = "\033[31m" # Merah
-h = "\033[32m" # Hijau 
-k = "\033[33m" # Kuning 
-b = "\033[34m" # Biru
-c = "\033[36m" # Cyan
-p = "\033[37m" # Putih 
-r = "\033[0m"  # Reset 
 
 print(f"""
 {c}      _             ____                     _    
