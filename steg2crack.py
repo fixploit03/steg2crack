@@ -53,9 +53,9 @@ elif sistem_operasi == "Windows":
     os.system("cls")
     
 print(f"""
-{p}                          ,
-{p}   ,-.       _,---._ __  / l
-{p}  /  )    .-'       `./ /   l
+{p}                         ,
+{p}  ,-.       _,---._ __  / l
+{p} /  )    .-'       `./ /   l
 {p}(  (   ,'            `/    /|
 {p} \  `-"             .'\   / |
 {p}  `.              ,  \ \ /  |
