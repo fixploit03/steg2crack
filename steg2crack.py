@@ -7,6 +7,7 @@
 ## Github    : https://github.com/fixploit03/steg2crack/
 
 import os
+import re
 import subprocess           
 import time
 import shutil
