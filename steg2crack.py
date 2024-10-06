@@ -65,14 +65,6 @@ if hasil_cek_steghide.returncode == 0:
     os.system("clear")
 else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
-    # Android (Termux) & Linux
-    if sistem_operasi == "Linux":
-        print(f"""{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah:
-{p}[{b}*{p}] Termux : {b}pkg install steghide{r}
-{p}[{b}*{p}] Linux : {b}sudo apt-get install steghide{r}""")
-    # Windows 
-    elif sistem_operasi == "Windows":
-        print(f"{p}[{m}-{p}] Anda dapat mendownload nya disini 'https://sourceforge.net/projects/steghide/files/steghide/0.5.1/steghide-0.5.1.zip/download'.{r}")
     exit(1)
 
 print(f"""
