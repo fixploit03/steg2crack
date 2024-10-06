@@ -29,6 +29,7 @@
 # SOFTWARE.
 
 import os
+import re
 import subprocess           
 import time
 import platform
