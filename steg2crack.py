@@ -56,14 +56,16 @@ if hasil_cek.returncode == 0:
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
     os.system("clear")
 else:
+    print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
     # Cek sistem operasi 
     cek_sistem_operasi = f"uname -o"
     hasil_cek_sistem_operasi = subprocess.run(cek_sistem_operasi, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if hasil_cek_sistem_operasi.returncode == 0:
         sistem_operasi = hasil_cek_sistem_operasi.stdout.decode().strip()
-        print(sistem_operasi)
-    print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
-    print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'sudo apt-get install steghide'.{r}")
+        if sistem_operasi == "Android":
+            print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'pkg install steghide'.{r}")
+        elif sistem_operasi == "GNU/Linux":
+            print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'sudo apt-get install steghide'.{r}")
     exit(1)
 
 print(f"""
