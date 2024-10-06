@@ -47,12 +47,20 @@ while True:
     except KeyboardInterrupt:
         print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
-    
-file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
 
-if not os.path.isfile(file_wordlist):
-    print(f"{p}[{m}-{p}] File Wordlist '{file_wordlist}' tidak ditemukan.{r}")
-    exit(1)
+while True:
+    try:
+        file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
+        if not file_wordlist:
+            print(f"{p}[{m}-{p}] File Wordlist tidak boleh kosong.{r}")
+            continue 
+        if not os.path.isfile(file_wordlist):
+            print(f"{p}[{m}-{p}] File Wordlist '{file_wordlist}' tidak ditemukan.{r}")
+            continue
+        break
+    except KeyboardInterrupt:
+        print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        exit(1)
 
 print("")
 
@@ -68,15 +76,20 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
         perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
-        hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if hasil.returncode == 0:
-            waktu_akhir = datetime.now()
-            print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
-            print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
-            kata_sandi_ditemukan = True 
-            break
-        else:
-            print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
+        try:
+            hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if hasil.returncode == 0:
+                waktu_akhir = datetime.now()
+                print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
+                print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+                kata_sandi_ditemukan = True 
+                break
+            else:
+                print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
+        except KeyboardInterrupt:
+            print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+            exit(1)
+            
 if not kata_sandi_ditemukan:
     waktu_akhir = datetime.now()
     print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
