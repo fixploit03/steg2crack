@@ -131,7 +131,7 @@ while True:
         if not folder:
             print("[-] Nama folder tidak boleh kosong.")
             continue
-        if not os.path.isfolder(folder):
+        if not os.path.isdir(folder):
             print(f"[-] Folder '{folder}' tidak ditemukan.")
             continue 
         break
