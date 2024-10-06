@@ -59,7 +59,7 @@ if hasil_cek_steghide.returncode == 0:
 else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
     # Cek sistem operasi 
-    cek_sistem_operasi = platform.system()
+    sistem_operasi = platform.system()
     # Android (Termux) & Linux
     if sistem_operasi == "Linux":
         print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'apt-get install steghide'.{r}")
