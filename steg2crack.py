@@ -36,7 +36,7 @@ print(f"""
 
 while True:
     try:
-        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
+        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego : ")
         if not file_stego:
             print(f"{p}[{m}-{p}] File Stego tidak boleh kosong.{r}")
             continue 
@@ -50,7 +50,7 @@ while True:
 
 while True:
     try:
-        file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
+        file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist : ")
         if not file_wordlist:
             print(f"{p}[{m}-{p}] File Wordlist tidak boleh kosong.{r}")
             continue 
@@ -70,7 +70,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     daftar_kata_sandi = fw.read().splitlines()
     jumlah_kata_sandi = len(daftar_kata_sandi)
     waktu_mulai = datetime.now()
-    print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {h}{jumlah_kata_sandi}{r}")
+    print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist : {h}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
