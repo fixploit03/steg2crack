@@ -33,15 +33,15 @@ import subprocess
 import time
 import platform
 from datetime import datetime
-
+from colorama import Fore, Style 
 ## Variabel warna
-m = "\033[31m" # Merah
-h = "\033[32m" # Hijau 
-k = "\033[33m" # Kuning 
-b = "\033[34m" # Biru
-c = "\033[36m" # Cyan
-p = "\033[37m" # Putih 
-r = "\033[0m"  # Reset 
+m = Fore.LIGHTRED_EX    # Merah
+h = Fore.LIGHTGREEN_EX  # Hijau
+k = Fore.LIGHTYELLOW_EX # Kuning
+b = Fore.LIGHTBLUE_EX   # Biru
+c = Fore.LIGHTCYAN_EX   # Cyan
+p = Fore.LIGHTWHITE_EX  # Putih 
+r = Style.RESET_ALL     # Reset 
 
 os.system("clear")
 
