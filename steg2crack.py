@@ -127,12 +127,12 @@ while True:
 
 while True:
     try:
-        folder = input("[#] Masukkan nama folder untuk menyimpan hasil file yang berhasil di-crack : ")
+        folder = input(f"{p}[{b}#{p}] Masukkan nama folder untuk menyimpan hasil file yang berhasil di-crack : ")
         if not folder:
-            print("[-] Nama folder tidak boleh kosong.")
+            print(f"{p}[{m}-{p}] Nama folder tidak boleh kosong.{r}")
             continue
         if not os.path.isdir(folder):
-            print(f"[-] Folder '{folder}' tidak ditemukan.")
+            print(f"{p}[{m}-{p}] Folder '{folder}' tidak ditemukan.{r}")
             continue 
         break
     except KeyboardInterrupt:
