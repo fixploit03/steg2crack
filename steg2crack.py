@@ -27,12 +27,12 @@ print(f"""
 {c}\__ \ ||  __/ (_| | (__| | | (_| | (__|   <  __/ |
 {c}|___/\__\___|\__, |\___|_|  \__,_|\___|_|\_\___|_|
 {c}             |___/     
-{p}[{b}*{p}] Program   : steg2crack
-{p}[{b}*{p}] Deskripsi : Program python3 untuk meng-crack file Stego
-{p}[{b}*{p}] Pembuat   : fixploit03 
-{p}[{b}*{p}] Github    : https://github.com/fixploit03/steg2crack/
-{p}[{b}*{p}] Team      : ArSec (Arjuna Security)
-""")
+{p}[{b}*{p}] Program   : {b}steg2crack
+{p}[{b}*{p}] Deskripsi : {b}Program python3 untuk meng-crack file Stego
+{p}[{b}*{p}] Pembuat   : {b}fixploit03 
+{p}[{b}*{p}] Github    : {b}https://github.com/fixploit03/steg2crack/
+{p}[{b}*{p}] Team      : {b}ArSec (Arjuna Security)
+{r}""")
 
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
@@ -54,7 +54,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     daftar_kata_sandi = fw.read().splitlines()
     jumlah_kata_sandi = len(daftar_kata_sandi)
     waktu_mulai = datetime.now()
-    print(f"{p}[{b}*{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {b}{jumlah_kata_sandi}{r}")
+    print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist: {h}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
