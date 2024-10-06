@@ -33,6 +33,7 @@ import re
 import subprocess           
 import time
 import platform
+import shutil 
 from datetime import datetime 
 
 ## Variabel warna
