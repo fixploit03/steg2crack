@@ -51,21 +51,22 @@ if sistem_operasi == "Linux":
 # Windows
 elif sistem_operasi == "Windows":
     os.system("cls")
-print("""
-                          ,
-   ,-.       _,---._ __  / l
-  /  )    .-'       `./ /   l
- (  (   ,'            `/    /|
-  \  `-"             .'\   / |
-   `.              ,  \ \ /  |
-    /`.          ,'-`----Y   |
-   (            ;        |   '
-   |  ,-.    ,-'         |  /
-   |  | (   |        Cat | /
-   )  |  \  `.___________|/
-   `--'   `--'
-          """)
-print(f"{p}[{b}*{p}] Mengecek steghide...{r}")
+print(f"""
+{p}                          ,
+{p}   ,-.       _,---._ __  / l
+{p}  /  )    .-'       `./ /   l
+{p}(  (   ,'            `/    /|
+{p} \  `-"             .'\   / |
+{p}  `.              ,  \ \ /  |
+{p}   /`.          ,'-`----Y   |
+{p}  (            ;        |   '
+{p}  |  ,-.    ,-'         |  /
+{p}  |  | (   |        {c}Cat {p}| /
+{p}  )  |  \  `.___________|/
+{p}  `--'   `--'
+{r}
+[{b}*{p}] Mengecek steghide...{r}
+""")
 time.sleep(3)
 
 # Cek steghide 
