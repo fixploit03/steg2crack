@@ -11,6 +11,7 @@ import subprocess
 import time
 import shutil
 from datetime import datetime
+from pathlib import Path
 
 ## Variabel warna
 m = "\033[31m" # Merah
@@ -97,13 +98,15 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
             hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if hasil.returncode == 0:
                 waktu_akhir = datetime.now()
-                print(f"{p}[{h}+{p}] Kata sandi ditemukan: {h}{kata_sandi}{r}") 
-                print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+                print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 shutil.move(file_txt, folder)
+                lokasi_file_txt = Path(file_txt).resolve()
+                print(f"{p}[{h}+{p}] File Stego berhasil di-crack dan disimpan di : {h}{lokasi_file_txt}{r}") 
+                print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
                 kata_sandi_ditemukan = True 
                 break
             else:
-                print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
+                print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi}{r}")
         except KeyboardInterrupt:
             print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
             exit(1)
