@@ -45,7 +45,7 @@ while True:
             continue
         break
     except KeyboardInterrupt:
-        print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
 
 while True:
@@ -59,7 +59,7 @@ while True:
             continue
         break
     except KeyboardInterrupt:
-        print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
 
 print("")
@@ -87,7 +87,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
             else:
                 print(f"{p}[{m}-{p}] Kata sandi salah: {m}{kata_sandi}{r}")
         except KeyboardInterrupt:
-            print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+            print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
             exit(1)
             
     if not kata_sandi_ditemukan:
