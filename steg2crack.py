@@ -44,16 +44,20 @@ r = "\033[0m"  # Reset
 
 os.system("clear")
 
+print(f"{p}[{b}*{p}] Mengecek steghide...{r}")
+time.sleep(3)
+
 # Cek steghide 
 cek = f"steghide --version"
 hasil_cek = subprocess.run(cek, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 if hasil_cek.returncode == 0:
-    print(f"{p}[{h}+{p}] Steghide sudah terinstal.{r}")
+    print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
     os.system("clear")
 else:
-    print(f"{p}[{m}-{p}] Steghide belum terinstal.{r}")
+    print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
+    print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'sudo apt-get install steghide'.{r}")
     exit(1)
 
 print(f"""
