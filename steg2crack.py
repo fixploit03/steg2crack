@@ -137,7 +137,7 @@ while True:
         break
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-        exit(1) yang 
+        exit(1)
         
 print("")
 
