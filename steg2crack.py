@@ -72,7 +72,7 @@ while True:
         if not os.path.isdir(folder):
             print(f"{p}[{m}-{p}] Folder '{folder}' tidak ditemukan.{r}")
             continue
-            break
+        break
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
