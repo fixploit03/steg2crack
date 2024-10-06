@@ -136,10 +136,14 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
-        perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
+        perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         try:
-            hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if hasil.returncode == 0:
+            hasil_crack = subprocess.run(perintah_crack, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            if hasil_crack.returncode == 0:
+                perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
+                hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
+                print(file_terbunyi)
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
