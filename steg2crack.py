@@ -142,7 +142,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
             hasil_crack = subprocess.run(perintah_crack, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if hasil_crack.returncode == 0:
                 perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
-                hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                hasil_cari_info_file = subprocess.run(perintah_cari_info_file, capture_output=True, text=True)
                 file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
                 print(file_terbunyi)
                 waktu_akhir = datetime.now()
