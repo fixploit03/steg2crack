@@ -42,16 +42,18 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Reset 
 
+os.system("clear")
+
 # Cek steghide 
 cek = f"steghide --version"
 hasil_cek = subprocess.run(cek, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 if hasil_cek.returncode == 0:
-    print("[+] Steghide sudah terinstal.\n")
+    print(f"{p}[{h}+{p}] Steghide sudah terinstal.{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
     os.system("clear")
 else:
-    print("[-] Steghide belum terinstal.")
+    print(f"{p}[{m}-{p}] Steghide belum terinstal.{r}")
     exit(1)
 
 print(f"""
