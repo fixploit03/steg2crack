@@ -72,10 +72,10 @@ print(f"""
 time.sleep(3)
 
 # Cek steghide 
-cek_steghide = f"steghide --version"
-hasil_cek_steghide = subprocess.run(cek_steghide, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+perintah_cek_steghide = f"steghide --version"
+hasil_perintah_cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-if hasil_cek_steghide.returncode == 0:
+if hasil_perintah_cek_steghide.returncode == 0:
     print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
     try:
         input(f"\n{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
