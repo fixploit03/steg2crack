@@ -20,18 +20,19 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Reset 
 
-print("""
-     _                                 _
- ___| |_ ___  __ _  ___ _ __ __ _  ___| | _____ _ __
-/ __| __/ _ \/ _` |/ __| '__/ _` |/ __| |/ / _ \ '__|
-\__ \ ||  __/ (_| | (__| | | (_| | (__|   <  __/ |
-|___/\__\___|\__, |\___|_|  \__,_|\___|_|\_\___|_|
-             |___/     
-[*] Program   : steg2crack
-[*] Deskripsi : Program python3 untuk meng-crack file Stego
-[*] Pembuat   : fixploit03 
-[*] Github    : https://github.com/fixploit03/steg2crack/
-[*] Team      : ArSec (Arjuna Security)""")
+print(f"""
+{c}     _                                 _
+{c} ___| |_ ___  __ _  ___ _ __ __ _  ___| | _____ _ __
+{c}/ __| __/ _ \/ _` |/ __| '__/ _` |/ __| |/ / _ \ '__|
+{c}\__ \ ||  __/ (_| | (__| | | (_| | (__|   <  __/ |
+{c}|___/\__\___|\__, |\___|_|  \__,_|\___|_|\_\___|_|
+{c}             |___/     
+{p}[{b}*{p}] Program   : steg2crack
+{p}[{b}*{p}] Deskripsi : Program python3 untuk meng-crack file Stego
+{p}[{b}*{p}] Pembuat   : fixploit03 
+{p}[{b}*{p}] Github    : https://github.com/fixploit03/steg2crack/
+{p}[{b}*{p}] Team      : ArSec (Arjuna Security)
+""")
 
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
