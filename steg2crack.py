@@ -77,7 +77,11 @@ hasil_cek_steghide = subprocess.run(cek_steghide, shell=True, stdout=subprocess.
 
 if hasil_cek_steghide.returncode == 0:
     print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
-    input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
+    try:
+        input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
+    except KeyboardInterrupt:
+        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        exit(1)
     os.system("clear")
 else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
