@@ -51,6 +51,7 @@ if sistem_operasi == "Linux":
 # Windows
 elif sistem_operasi == "Windows":
     os.system("cls")
+    
 print(f"""
 {p}                          ,
 {p}   ,-.       _,---._ __  / l
