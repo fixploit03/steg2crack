@@ -48,10 +48,10 @@ print(f"{p}[{b}*{p}] Mengecek steghide...{r}")
 time.sleep(3)
 
 # Cek steghide 
-cek = f"steghide --version"
-hasil_cek = subprocess.run(cek, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+cek_steghide = f"steghide --version"
+hasil_cek_steghide = subprocess.run(cek_steghide, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-if hasil_cek.returncode == 0:
+if hasil_cek_steghide.returncode == 0:
     print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses melanjutkan...{r}")
     os.system("clear")
