@@ -33,6 +33,7 @@ import re
 import subprocess           
 import time
 import platform
+import shutil 
 from datetime import datetime 
 
 ## Variabel warna
@@ -124,6 +125,20 @@ while True:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
 
+while True:
+    try:
+        folder = input("[#] Masukkan nama folder untuk menyimpan hasil file yang berhasil di-crack : ")
+        if not folder:
+            print("[-] Nama folder tidak boleh kosong.")
+            continue
+        if not os.path.isfolder(folder):
+            print(f"[-] Folder '{folder}' tidak ditemukan.")
+            continue 
+        break
+    except KeyboardInterrupt:
+        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        exit(1) yang 
+        
 print("")
 
 kata_sandi_ditemukan = False
@@ -144,7 +159,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
                 perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
                 hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
                 file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
-                print(file_terbunyi.group(1))
+                shutil.move(file_terbunyi.group(1), folder)
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
