@@ -33,7 +33,6 @@ import re
 import subprocess           
 import time
 import platform
-import shutil 
 from datetime import datetime 
 
 ## Variabel warna
@@ -163,7 +162,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
                 perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
                 hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
                 file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
-                shutil.move(file_terbunyi.group(1), folder)
+                os.replace(file_terbunyi.group(1), folder)
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
