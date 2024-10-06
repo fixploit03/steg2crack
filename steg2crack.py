@@ -99,9 +99,9 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
             if hasil.returncode == 0:
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
-                shutil.move(file_txt, folder)
-                lokasi_file_txt = Path(file_txt).resolve()
-                print(f"{p}[{h}+{p}] File Stego berhasil di-crack dan disimpan di : {h}{lokasi_file_txt}{r}") 
+                # shutil.move(file_txt, folder)
+                # lokasi_file_txt = Path(file_txt).resolve()
+                # print(f"{p}[{h}+{p}] File Stego berhasil di-crack dan disimpan di : {h}{lokasi_file_txt}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
                 kata_sandi_ditemukan = True 
                 break
