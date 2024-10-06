@@ -43,8 +43,15 @@ c = "\033[36m" # Cyan
 p = "\033[37m" # Putih 
 r = "\033[0m"  # Reset 
 
-os.system("clear")
-
+# Cek sistem operasi 
+sistem_operasi = platform.system()
+# Android (Termux) & Linux
+if sistem_operasi == "Linux":
+    os.system("clear")
+# Windows
+elif sistem_operasi == "Windows":
+    os.system("cls")
+    
 print(f"{p}[{b}*{p}] Mengecek steghide...{r}")
 time.sleep(3)
 
@@ -58,8 +65,6 @@ if hasil_cek_steghide.returncode == 0:
     os.system("clear")
 else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
-    # Cek sistem operasi 
-    sistem_operasi = platform.system()
     # Android (Termux) & Linux
     if sistem_operasi == "Linux":
         print(f"""{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah:
