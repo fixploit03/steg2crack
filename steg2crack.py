@@ -95,6 +95,10 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         try:
             hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if hasil.returncode == 0:
+                mencari_info_file = f"steghide info -p {kata_sandi}" {file_stego}
+                hasil_mencari_info_file = subprocess.run(mencari_info_file, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                info_file = re.findall(r'embedded file\s+"(.*?)"', hasil_mencari_info_file.stdout)
+                print(info_file)
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
