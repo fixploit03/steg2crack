@@ -60,12 +60,12 @@ else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
     # Cek sistem operasi 
     cek_sistem_operasi = platform.system()
-    # Android (Termux)
-    if sistem_operasi == "Android":
-        print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'pkg install steghide'.{r}")
-    # Linux 
-    elif sistem_operasi == "GNU/Linux":
-        print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'sudo apt-get install steghide'.{r}")
+    # Android (Termux) & Linux
+    if sistem_operasi == "Linux":
+        print(f"{p}[{m}-{p}] Anda dapat menginstalnya dengan mengetikkan perintah 'apt-get install steghide'.{r}")
+    # Windows 
+    elif sistem_operasi == "Windows":
+        print(f"{p}[{m}-{p}] Anda dapat mendownload nya disini 'https://sourceforge.net/projects/steghide/files/steghide/0.5.1/steghide-0.5.1.zip/download'.{r}")
     exit(1)
 
 print(f"""
