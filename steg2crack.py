@@ -117,11 +117,13 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     daftar_kata_sandi = fw.read().splitlines()
     jumlah_kata_sandi = len(daftar_kata_sandi)
     waktu_mulai = datetime.now()
+    percobaan = 0
     print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist : {h}{jumlah_kata_sandi}{r}")
     input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
+        percobaan += 1
         perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         try:
             hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -132,7 +134,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
                 kata_sandi_ditemukan = True 
                 break
             else:
-                print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi}{r}")
+                print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi} {p}[{m}{percobaan}{p}/{m}{jumlah_kata_sandi}{p}]{r}")
         except KeyboardInterrupt:
             print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
             exit(1)
