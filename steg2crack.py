@@ -82,7 +82,6 @@ print("")
 
 kata_sandi_ditemukan = False
 
-
 with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     daftar_kata_sandi = fw.read().splitlines()
     jumlah_kata_sandi = len(daftar_kata_sandi)
@@ -92,16 +91,12 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
-        # file_txt = f"{file_stego}.out"
         perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         try:
             hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if hasil.returncode == 0:
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
-                # shutil.move(file_txt, folder)
-                # lokasi_file_txt = Path(file_txt).resolve()
-                # print(f"{p}[{h}+{p}] File Stego berhasil di-crack dan disimpan di : {h}{lokasi_file_txt}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
                 kata_sandi_ditemukan = True 
                 break
