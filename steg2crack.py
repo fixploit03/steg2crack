@@ -26,9 +26,12 @@ print("""
 / __| __/ _ \/ _` |/ __| '__/ _` |/ __| |/ / _ \ '__|
 \__ \ ||  __/ (_| | (__| | | (_| | (__|   <  __/ |
 |___/\__\___|\__, |\___|_|  \__,_|\___|_|\_\___|_|
-             |___/ 
-             
-      https://github.com/fixploit03/steg2crack/""")
+             |___/     
+[*] Program   : steg2crack
+[*] Deskripsi : Program python3 untuk meng-crack file Stego
+[*] Pembuat   : fixploit03 
+[*] Github    : https://github.com/fixploit03/steg2crack/
+[*] Team      : ArSec (Arjuna Security)""")
 
 file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
 
