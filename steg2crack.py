@@ -65,8 +65,7 @@ print(f"""
 {p}  )  |  \  `.___________|/
 {p}  `--'   `--'
 {r}
-[{b}*{p}] Mengecek steghide...{r}
-""")
+[{b}*{p}] Mengecek steghide...{r}""")
 time.sleep(3)
 
 # Cek steghide 
