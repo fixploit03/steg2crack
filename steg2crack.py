@@ -174,7 +174,6 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         except KeyboardInterrupt:
             print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
             exit(1)
-            
     if not kata_sandi_ditemukan:
         waktu_akhir = datetime.now()
         print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
