@@ -44,6 +44,9 @@ while True:
             print(f"{p}[{m}-{p}] File Stego '{file_stego}' tidak ditemukan.{r}")
             continue
         break
+    except KeyboardInterrupt:
+        print(f"{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        exit(1)
     
 file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
 
