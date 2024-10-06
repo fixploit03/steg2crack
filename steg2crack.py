@@ -34,11 +34,16 @@ print(f"""
 {p}[{b}*{p}] Team      : {b}ArSec (Arjuna Security)
 {r}""")
 
-file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
-
-if not os.path.isfile(file_stego):
-    print(f"{p}[{m}-{p}] File Stego '{file_stego}' tidak ditemukan.{r}")
-    exit(1)
+while True:
+    try:
+        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego: ")
+        if not file_stego:
+            print(f"{p}[{m}-{p}] File Stego tidak boleh kosong.{r}")
+            continue 
+        if not os.path.isfile(file_stego):
+            print(f"{p}[{m}-{p}] File Stego '{file_stego}' tidak ditemukan.{r}")
+            continue
+        break
     
 file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist: ")
 
