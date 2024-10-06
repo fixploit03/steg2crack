@@ -92,8 +92,8 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
     time.sleep(3)
     for kata_sandi in daftar_kata_sandi:
-        file_txt = f"{file_stego}.out"
-        perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -xf {file_txt}"
+        # file_txt = f"{file_stego}.out"
+        perintah = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         try:
             hasil = subprocess.run(perintah, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if hasil.returncode == 0:
