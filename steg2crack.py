@@ -73,7 +73,7 @@ time.sleep(3)
 
 # Cek steghide 
 perintah_cek_steghide = f"steghide --version"
-hasil_perintah_cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+hasil_perintah_cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, capture_output=True, text=True)
 
 if hasil_perintah_cek_steghide.returncode == 0:
     print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
@@ -163,7 +163,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
     for kata_sandi in daftar_kata_sandi:
         perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
         try:
-            hasil_crack = subprocess.run(perintah_crack, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
             if hasil_crack.returncode == 0:
                 perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
                 hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
