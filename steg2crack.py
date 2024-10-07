@@ -82,7 +82,12 @@ if hasil_perintah_cek_steghide.returncode == 0:
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
-    os.system("clear")
+    # Android (Termux) & Linux
+    if sistem_operasi == "Linux":
+        os.system("clear")
+    # Windows
+    elif sistem_operasi == "Windows":
+        os.system("cls")
 else:
     print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
     exit(1)
