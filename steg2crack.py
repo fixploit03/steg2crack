@@ -170,8 +170,9 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
                 file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
                 try:
                     shutil.move(file_terbunyi.group(1), folder)
-                except Exception as e:
-                    print(f"{p}[{m}-{p}] Terjadi kesalahan: {e}{r}")
+                except FileExistsError:
+                    print(f"{p}[{m}-{p}] File '{file_terbunyi.group(1)}' sudah ada.{r}")
+                    exit(1)
                 waktu_akhir = datetime.now()
                 print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                 print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
