@@ -170,7 +170,7 @@ with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
                 file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
                 try:
                     shutil.move(file_terbunyi.group(1), folder)
-                except FileExistsError:
+                except shutil.Error:
                     print(f"{p}[{m}-{p}] File '{file_terbunyi.group(1)}' sudah ada.{r}")
                     exit(1)
                 waktu_akhir = datetime.now()
