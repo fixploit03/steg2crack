@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 ## Program   : steg2crack
 ## Deskripsi : Program python3 sederhana yang dirancang untuk meng-crack file Stego.
