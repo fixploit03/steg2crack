@@ -82,6 +82,9 @@ if hasil_perintah_cek_steghide.returncode == 0:
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
+    except Exception as e:
+        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+        exit(1)
     # Android (Termux) & Linux
     if sistem_operasi == "Linux":
         os.system("clear")
@@ -119,6 +122,9 @@ while True:
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
+    except Exception as e:
+        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+        exit(1)
 
 while True:
     try:
@@ -132,6 +138,9 @@ while True:
         break
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+        exit(1)
+    except Exception as e:
+        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
         exit(1)
 
 while True:
@@ -147,39 +156,46 @@ while True:
     except KeyboardInterrupt:
         print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
         exit(1)
-        
+    except Exception as e:
+        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+        exit(1)
+
 print("")
 
 kata_sandi_ditemukan = False
 
-with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
-    daftar_kata_sandi = fw.read().splitlines()
-    jumlah_kata_sandi = len(daftar_kata_sandi)
-    waktu_mulai = datetime.now()
-    print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist : {h}{jumlah_kata_sandi}{r}")
-    input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
-    print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
-    time.sleep(3)
-    for kata_sandi in daftar_kata_sandi:
-        perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
-        try:
-            hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
-            if hasil_crack.returncode == 0:
-                perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
-                hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
-                file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
-                shutil.copy(file_terbunyi.group(1), folder)           
-                waktu_akhir = datetime.now()
-                print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
-                print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
-                kata_sandi_ditemukan = True 
-                break
-            else:
-                print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi}{r}")
-        except KeyboardInterrupt:
-            print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-            exit(1)
-    if not kata_sandi_ditemukan:
-        waktu_akhir = datetime.now()
-        print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
-        print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+try:
+    with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
+        daftar_kata_sandi = fw.read().splitlines()
+        jumlah_kata_sandi = len(daftar_kata_sandi)
+        waktu_mulai = datetime.now()
+        print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist : {h}{jumlah_kata_sandi}{r}")
+        input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
+        print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
+        time.sleep(3)
+        for kata_sandi in daftar_kata_sandi:
+            perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
+            try:
+                hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
+                if hasil_crack.returncode == 0:
+                    perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
+                    hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
+                    file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
+                    shutil.copy(file_terbunyi.group(1), folder)           
+                    waktu_akhir = datetime.now()
+                    print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
+                    print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+                    kata_sandi_ditemukan = True 
+                    break
+                else:
+                    print(f"{p}[{m}-{p}] Kata sandi salah : {m}{kata_sandi}{r}")
+            except KeyboardInterrupt:
+                print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+                exit(1)
+        if not kata_sandi_ditemukan:
+            waktu_akhir = datetime.now()
+            print(f"{p}[{m}-{p}] Kata sandi tidak ditemukan, coba file Wordlist yang lain.{r}")
+            print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
+except Exception as e:
+    print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+    exit(1)
