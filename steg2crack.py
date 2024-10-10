@@ -173,24 +173,6 @@ while True:
         print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
         exit(1)
 
-# Meminta nama folder untuk menyimpan hasil file yang berharga di-crack
-while True:
-    try:
-        folder = input(f"{p}[{b}#{p}] Masukkan nama folder untuk menyimpan hasil file yang berhasil di-crack : ")
-        if not folder:
-            print(f"{p}[{m}-{p}] Nama folder tidak boleh kosong.{r}")
-            continue
-        if not os.path.isdir(folder):
-            print(f"{p}[{m}-{p}] Folder '{folder}' tidak ditemukan.{r}")
-            continue 
-        break
-    except KeyboardInterrupt:
-        print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
-        exit(1)
-    except Exception as e:
-        print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
-        exit(1)
-
 print("")
 
 kata_sandi_ditemukan = False
@@ -209,11 +191,7 @@ try:
             perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
-                if hasil_crack.returncode == 0:
-                    perintah_cari_info_file = f"steghide info -p {kata_sandi} {file_stego}"
-                    hasil_cari_info_file = subprocess.run(perintah_cari_info_file, shell=True, capture_output=True, text=True)
-                    file_terbunyi = re.search(r'embedded file "([^"]+)"', hasil_cari_info_file.stdout)
-                    shutil.copy(file_terbunyi.group(1), folder)           
+                if hasil_crack.returncode == 0:           
                     waktu_akhir = datetime.now()
                     print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                     print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
