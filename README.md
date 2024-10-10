@@ -45,3 +45,9 @@ $ sudo apt-get install git
 # Mengkloning repositori steg2crack dari GitHub
 $ git clone https://github.com/fixploit03/steg2crack/
 ```
+
+## Menjalankan Program
+
+```
+python3 steg2crack.py
+```
