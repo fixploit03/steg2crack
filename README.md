@@ -54,7 +54,7 @@ python3 steg2crack.py
 
 ## Lisensi
 
-Program ini dilisensikan di bawah MIT License.
+Program ini dilisensikan di bawah [MIT License](https://github.com/fixploit03/steg2crack/blob/main/LICENSE).
 
 ## Penulis
 
