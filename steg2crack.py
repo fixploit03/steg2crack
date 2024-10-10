@@ -54,6 +54,19 @@ if sistem_operasi == "Linux":
 elif sistem_operasi == "Windows":
     os.system("cls")
 
+print("""
+Selamat datang di steg2crack
+
+Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Steganografi 
+dengan teknik Dictionary Attack.
+
+Informasi
+
+File steganografi adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,
+di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke dalam
+file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi
+""")
+
 # Banner cek steghide 
 print(f"""
 {p}                         ,
