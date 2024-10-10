@@ -51,3 +51,13 @@ $ git clone https://github.com/fixploit03/steg2crack/
 ```
 python3 steg2crack.py
 ```
+
+## Lisensi
+
+Program ini dilisensikan di bawah MIT License.
+
+## Penulis
+
+[fixploit03](https://github.com/fixploit03)
+
+> **Catatan**: Program ini hanya mendukung file steganografi yang dihasilkan oleh alat Steghide, sehingga mungkin tidak berfungsi dengan file steganografi yang dihasilkan oleh alat lain.
