@@ -70,7 +70,7 @@ print(f"""
 """)
 
 try:
-    input(f"\n{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
+    input(f"{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
 except KeyboardInterrupt:
     print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
     exit(1)
