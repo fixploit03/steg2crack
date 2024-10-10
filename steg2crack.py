@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ## Program   : steg2crack
-## Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file Steganografi dengan teknik Dictionary Attack.
+## Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file Stegano dengan teknik Dictionary Attack.
 ## Pembuat   : fixploit03 
 ## Rilis     : 5-10-2024
 ## Github    : https://github.com/fixploit03/steg2crack/
@@ -56,16 +56,27 @@ elif sistem_operasi == "Windows":
 
 print("""
 Selamat datang di steg2crack
+----------------------------
 
-Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Steganografi 
-dengan teknik Dictionary Attack.
+Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Stegano dengan
+teknik Dictionary Attack.
 
 Informasi
+---------
 
-File steganografi adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,
-di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke dalam
-file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi
+File Stegano  adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,
+di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke 
+dalam file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi
 """)
+
+try:
+    input(f"\n{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
+except KeyboardInterrupt:
+    print(f"\n{p}[{m}-{p}] Program dihentikan oleh pengguna.{r}")
+    exit(1)
+except Exception as e:
+    print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
+    exit(1)
 
 # Banner cek steghide 
 print(f"""
