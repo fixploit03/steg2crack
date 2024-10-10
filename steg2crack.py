@@ -54,19 +54,19 @@ if sistem_operasi == "Linux":
 elif sistem_operasi == "Windows":
     os.system("cls")
 
-print("""
-Selamat datang di steg2crack
-----------------------------
+print(f"""
+{c}Selamat datang di steg2crack{r}
+{p}----------------------------{r}
+{r}
+{p}Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Stegano dengan{r}
+{p}teknik Dictionary Attack.{r}
 
-Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Stegano dengan
-teknik Dictionary Attack.
-
-Informasi
----------
-
-File Stegano  adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,
-di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke 
-dalam file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi
+{c}Informasi{r}
+{p}---------{r}
+{r}
+{p}File Stegano  adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,{r}
+{p}di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke {r}
+{p}dalam file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi{r}
 """)
 
 try:
@@ -77,6 +77,13 @@ except KeyboardInterrupt:
 except Exception as e:
     print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
     exit(1)
+
+# Android (Termux) & Linux
+if sistem_operasi == "Linux":
+    os.system("clear")
+# Windows
+elif sistem_operasi == "Windows":
+    os.system("cls")
 
 # Banner cek steghide 
 print(f"""
