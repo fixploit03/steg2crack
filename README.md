@@ -60,4 +60,4 @@ Program ini dilisensikan di bawah [MIT License](https://github.com/fixploit03/st
 
 [fixploit03](https://github.com/fixploit03)
 
-> **Catatan**: Program ini hanya mendukung file stegano yang dihasilkan oleh alat Steghide, sehingga mungkin tidak berfungsi dengan file stegano yang dihasilkan oleh alat lain.
+> **Catatan**: Program ini hanya mendukung file Stegano yang dihasilkan oleh alat Steghide, sehingga mungkin tidak berfungsi dengan file Stegano yang dihasilkan oleh alat lain.
