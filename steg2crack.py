@@ -140,12 +140,12 @@ print(f"""
 # Meminta nama file Steganografi dari pengguna
 while True:
     try:
-        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stego : ")
+        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stegano : ")
         if not file_stego:
-            print(f"{p}[{m}-{p}] File Stego tidak boleh kosong.{r}")
+            print(f"{p}[{m}-{p}] File Stegano tidak boleh kosong.{r}")
             continue 
         if not os.path.isfile(file_stego):
-            print(f"{p}[{m}-{p}] File Stego '{file_stego}' tidak ditemukan.{r}")
+            print(f"{p}[{m}-{p}] File Stegano '{file_stego}' tidak ditemukan.{r}")
             continue
         break
     except KeyboardInterrupt:
