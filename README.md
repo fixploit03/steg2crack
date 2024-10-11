@@ -4,7 +4,7 @@
 
 ## Demonstrasi
 
-![](https://github.com/fixploit03/steg2crack/blob/main/lv_0_20241010193822.gif)
+[Lihat video demonstrasi di YouTube](https://www.youtube.com/watch?v=iG0YezVJbUhuJU8w)
 
 ## Instalasi 
 
