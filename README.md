@@ -4,7 +4,7 @@
 
 ## Demonstrasi
 
-[Lihat video demonstrasi di YouTube](https://www.youtube.com/watch?v=iG0YezVJbUhuJU8w)
+[Lihat video demonstrasi di YouTube](https://www.youtube.com/watch?v=uhMEXRYpJHU)
 
 ## Instalasi 
 
