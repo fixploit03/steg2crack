@@ -140,12 +140,12 @@ print(f"""
 # Meminta nama file Steganografi dari pengguna
 while True:
     try:
-        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file Stegano : ")
-        if not file_stego:
+        file_stegano = input(f"{p}[{b}#{p}] Masukkan nama file Stegano : ")
+        if not file_stegano:
             print(f"{p}[{m}-{p}] File Stegano tidak boleh kosong.{r}")
             continue 
-        if not os.path.isfile(file_stego):
-            print(f"{p}[{m}-{p}] File Stegano '{file_stego}' tidak ditemukan.{r}")
+        if not os.path.isfile(file_stegano):
+            print(f"{p}[{m}-{p}] File Stegano '{file_stegano}' tidak ditemukan.{r}")
             continue
         break
     except KeyboardInterrupt:
@@ -188,7 +188,7 @@ try:
         print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
         time.sleep(3)
         for kata_sandi in daftar_kata_sandi:
-            perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
+            perintah_crack = f"steghide extract -sf {file_stegano} -p {kata_sandi} -f"
             try:
                 hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
                 if hasil_crack.returncode == 0:           
