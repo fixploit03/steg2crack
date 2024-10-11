@@ -1,14 +1,14 @@
-# steg2crack
+# steg2crack :closed_lock_with_key:
 
 `steg2crack` adalah program Python sederhana yang dirancang untuk meng-crack file [Stegano](https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1) dengan teknik [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
-## Demonstrasi
+## Demonstrasi :movie_camera:
 
 [Lihat video demonstrasi di YouTube](https://www.youtube.com/watch?v=Qd4P68u0UFQ)
 
-## Instalasi 
+## Instalasi :gear:
 
-### Termux 
+### Termux :iphone:
 
 ```
 # Memperbaharui repositori Termux 
@@ -27,7 +27,7 @@ $ pkg install git
 $ git clone https://github.com/fixploit03/steg2crack/
 ```
 
-### Linux (Debian/Ubuntu)
+### Linux (Debian/Ubuntu) :computer:
 
 ```
 # Memperbaharui repositori Linux 
@@ -46,18 +46,18 @@ $ sudo apt-get install git
 $ git clone https://github.com/fixploit03/steg2crack/
 ```
 
-## Menjalankan Program
+## Menjalankan Program 👨🏾‍💻
 
 ```
 python3 steg2crack.py
 ```
 
-## Lisensi
+## Lisensi :scroll:
 
 Program ini dilisensikan di bawah [MIT License](https://github.com/fixploit03/steg2crack/blob/main/LICENSE).
 
-## Penulis
+## Penulis :pen:
 
 [fixploit03](https://github.com/fixploit03)
 
-> **Catatan**: Program ini hanya mendukung file Stegano yang dihasilkan oleh alat Steghide, sehingga mungkin tidak berfungsi dengan file Stegano yang dihasilkan oleh alat lain.
+> :clipboard: **Catatan**: Program ini hanya mendukung file Stegano yang dihasilkan oleh alat Steghide, sehingga mungkin tidak berfungsi dengan file Stegano yang dihasilkan oleh alat lain.
