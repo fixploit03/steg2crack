@@ -153,15 +153,15 @@ while True:
         print(f"\n{p}[{m}-{p}] Terjadi kesalahan: {e}.{r}")
         exit(1)
 
-# Meminta nama file Wordlist dari pengguna
+# Meminta nama file wordlist dari pengguna
 while True:
     try:
-        file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file Wordlist : ")
+        file_wordlist = input(f"{p}[{b}#{p}] Masukkan nama file wordlist : ")
         if not file_wordlist:
-            print(f"{p}[{m}-{p}] File Wordlist tidak boleh kosong.{r}")
+            print(f"{p}[{m}-{p}] File wordlist tidak boleh kosong.{r}")
             continue 
         if not os.path.isfile(file_wordlist):
-            print(f"{p}[{m}-{p}] File Wordlist '{file_wordlist}' tidak ditemukan.{r}")
+            print(f"{p}[{m}-{p}] File wordlist '{file_wordlist}' tidak ditemukan.{r}")
             continue
         break
     except KeyboardInterrupt:
