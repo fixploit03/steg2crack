@@ -129,29 +129,14 @@ else:
     exit(1)
 
 # Banner program 
-banner_1 = f"""
+print(f"""
 {c}      _             ____                     _    
 {c}  ___| |_ ___  __ _|___ \ ___ _ __ __ _  ___| | __
 {c} / __| __/ _ \/ _` | __) / __| '__/ _` |/ __| |/ /
 {c} \__ \ ||  __/ (_| |/ __/ (__| | | (_| | (__|   < 
 {c} |___/\__\___|\__, |_____\___|_|  \__,_|\___|_|\_|
 {c}              |___/                               
-{r}"""
-
-banner_2 = """
-           :::::::::::::::::
-           ::  [T] = [54] ::
-           ::  [E] = [45] ::
-           ::  [X] = [58] ::
-           ::  [T] = [54] ::     
-           :::::::::::::::::        
-           
-      Selamat datang di steg2crack      
-https://github.com/fixploit03/steg2crack/
-"""
-
-banner = random.choice([banner_1, banner_2])
-print(banner)
+{r}""")
 
 # Meminta nama file Steganografi dari pengguna
 while True:
