@@ -26,8 +26,8 @@ $ pkg install steghide
 # Menginstal git
 $ pkg install git
 
-# Mengkloning repositori steg2crack dari GitHub
-$ git clone https://github.com/fixploit03/steg2crack/
+# Mengkloning repositori Steg2crack dari GitHub
+$ git clone https://github.com/fixploit03/Steg2crack/
 ```
 
 ### Linux (Debian/Ubuntu) :computer:
@@ -45,14 +45,14 @@ $ sudo apt-get install steghide
 # Menginstal git
 $ sudo apt-get install git
 
-# Mengkloning repositori steg2crack dari GitHub
-$ git clone https://github.com/fixploit03/steg2crack/
+# Mengkloning repositori Steg2crack dari GitHub
+$ git clone https://github.com/fixploit03/Steg2crack/
 ```
 
 ## Menjalankan Program 👨🏾‍💻
 
 ```
-python3 steg2crack.py
+python3 main.py
 ```
 
 ## Lisensi :scroll:
