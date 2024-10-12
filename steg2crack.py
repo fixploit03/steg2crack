@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 ## Program   : steg2crack
-## Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file Stegano dengan teknik Dictionary Attack.
+## Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file stego dengan teknik Dictionary Attack.
 ## Pembuat   : fixploit03 
 ## Rilis     : 5-10-2024
 ## Github    : https://github.com/fixploit03/steg2crack/
@@ -29,12 +29,9 @@
 # SOFTWARE.
 
 import os
-import re
 import subprocess           
 import time
 import platform
-import shutil 
-import random 
 from datetime import datetime 
 
 ## Variabel warna
@@ -59,13 +56,13 @@ print(f"""
 {c}Selamat datang di steg2crack{r}
 {p}----------------------------{r}
 {r}
-{p}Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file Stegano dengan{r}
+{p}Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file stego menggunakan {r}
 {p}teknik Dictionary Attack.{r}
 
 {c}Informasi{r}
 {p}---------{r}
 {r}
-{p}File Stegano  adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,{r}
+{p}File stego adalah file yang mengandung informasi atau data yang disembunyikan di dalamnya,{r}
 {p}di mana data tersebut tidak dapat dilihat secara langsung. Biasanya, data ini disisipkan ke {r}
 {p}dalam file lain, seperti gambar, audio, atau video, menggunakan teknik steganografi{r}
 """)
@@ -101,7 +98,7 @@ print(f"""
 {p}  )  |  \  `.___________|/
 {p}  `--'   `--'
 {r}
-[{b}*{p}] Mengecek steghide...{r}""")
+[{b}*{p}] Mengecek Steghide...{r}""")
 time.sleep(3)
 
 # Cek steghide 
@@ -109,7 +106,7 @@ perintah_cek_steghide = f"steghide --version"
 hasil_perintah_cek_steghide = subprocess.run(perintah_cek_steghide, shell=True, capture_output=True, text=True)
 
 if hasil_perintah_cek_steghide.returncode == 0:
-    print(f"{p}[{h}+{p}] steghide sudah terinstal.{r}")
+    print(f"{p}[{h}+{p}] Steghide sudah terinstal.{r}")
     try:
         input(f"\n{p}Tekan [{h}Enter{p}] untuk melanjutkan...{r}")
     except KeyboardInterrupt:
@@ -125,7 +122,7 @@ if hasil_perintah_cek_steghide.returncode == 0:
     elif sistem_operasi == "Windows":
         os.system("cls")
 else:
-    print(f"{p}[{m}-{p}] steghide belum terinstal.{r}")
+    print(f"{p}[{m}-{p}] Steghide belum terinstal.{r}")
     exit(1)
 
 # Banner program 
@@ -138,15 +135,15 @@ print(f"""
 {c}              |___/                              {r}
 """)
 
-# Meminta nama file Steganografi dari pengguna
+# Meminta nama file stego dari pengguna
 while True:
     try:
-        file_stegano = input(f"{p}[{b}#{p}] Masukkan nama file Stegano : ")
-        if not file_stegano:
-            print(f"{p}[{m}-{p}] File Stegano tidak boleh kosong.{r}")
+        file_stego = input(f"{p}[{b}#{p}] Masukkan nama file stego : ")
+        if not file_stego:
+            print(f"{p}[{m}-{p}] File stego tidak boleh kosong.{r}")
             continue 
-        if not os.path.isfile(file_stegano):
-            print(f"{p}[{m}-{p}] File Stegano '{file_stegano}' tidak ditemukan.{r}")
+        if not os.path.isfile(file_stego):
+            print(f"{p}[{m}-{p}] File stego '{file_stego}' tidak ditemukan.{r}")
             continue
         break
     except KeyboardInterrupt:
@@ -189,7 +186,7 @@ try:
         print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
         time.sleep(3)
         for kata_sandi in daftar_kata_sandi:
-            perintah_crack = f"steghide extract -sf {file_stegano} -p {kata_sandi} -f"
+            perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
                 if hasil_crack.returncode == 0:           
