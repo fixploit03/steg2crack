@@ -53,7 +53,7 @@ elif sistem_operasi == "Windows":
     os.system("cls")
 
 print(f"""
-{c}Selamat datang di steg2crack{r}
+{c}Selamat datang di Steg2crack{r}
 {p}----------------------------{r}
 {r}
 {p}Steg2crack adalah program Python sederhana yang dirancang untuk meng-crack file stego menggunakan {r}
