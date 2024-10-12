@@ -1,9 +1,9 @@
 ![Python Version](https://img.shields.io/badge/python-3.x-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Repo Size](https://img.shields.io/github/repo-size/fixploit03/steg2crack)
-![Issues](https://img.shields.io/github/issues/fixploit03/steg2crack)
-![Forks](https://img.shields.io/github/forks/fixploit03/steg2crack)
-![Stars](https://img.shields.io/github/stars/fixploit03/steg2crack)
+![Repo Size](https://img.shields.io/github/repo-size/fixploit03/Steg2crack)
+![Issues](https://img.shields.io/github/issues/fixploit03/Steg2crack)
+![Forks](https://img.shields.io/github/forks/fixploit03/Steg2crack)
+![Stars](https://img.shields.io/github/stars/fixploit03/Steg2crack)
 
 # Steg2crack :closed_lock_with_key:
 
