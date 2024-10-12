@@ -7,11 +7,7 @@
 
 # steg2crack :closed_lock_with_key:
 
-`steg2crack` adalah program Python sederhana yang dirancang untuk meng-crack file [Stegano](https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1) dengan teknik [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
-
-## Demonstrasi :movie_camera:
-
-[Lihat video demonstrasi di YouTube](https://www.youtube.com/watch?v=Qd4P68u0UFQ)
+`steg2crack` adalah program Python sederhana yang dirancang untuk meng-crack file [stego](https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1) menggunakan teknik [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
 ## Instalasi :gear:
 
@@ -67,4 +63,4 @@ Program ini dilisensikan di bawah [MIT License](https://github.com/fixploit03/st
 
 [fixploit03](https://github.com/fixploit03)
 
-> :clipboard: **Catatan**: Program ini hanya mendukung file Stegano yang dihasilkan oleh alat [Steghide](https://steghide.sourceforge.net/), sehingga mungkin tidak berfungsi dengan file Stegano yang dihasilkan oleh alat lain.
+> :clipboard: **Catatan**: Program ini hanya mendukung file stego yang dihasilkan oleh alat [Steghide](https://steghide.sourceforge.net/), sehingga mungkin tidak berfungsi dengan file stego yang dihasilkan oleh alat lain.
