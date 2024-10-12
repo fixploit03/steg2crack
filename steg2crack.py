@@ -181,7 +181,7 @@ try:
         daftar_kata_sandi = fw.read().splitlines()
         jumlah_kata_sandi = len(daftar_kata_sandi)
         waktu_mulai = datetime.now()
-        print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file Wordlist : {h}{jumlah_kata_sandi}{r}")
+        print(f"{p}[{h}+{p}] Jumlah kata sandi yang terdapat dalam file wordlist : {h}{jumlah_kata_sandi}{r}")
         input(f"\n{p}Tekan [{h}Enter{p}] untuk memulai proses cracking...{r}")
         print(f"\n{p}[{b}*{p}] Dimulai pada : {b}{waktu_mulai.strftime('%d-%m-%Y %H:%M:%S')}{r}\n")
         time.sleep(3)
