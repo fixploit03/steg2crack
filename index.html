@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Steg2crack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none; /* Mencegah seleksi teks */
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #2c3e50; /* sama seperti footer */
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            color: white; /* warna sintaksis */
+        }
+        .comment {
+            color: #1abc9c; /* warna komentar seperti di footer */
+        }
+        .badge {
+            margin-right: 5px;
+        }
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+        }
+        footer a {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        details {
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        summary {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    </style>
+    <script>
+        // Menonaktifkan klik kanan untuk mencegah salin dan menampilkan alert
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            alert("Mau ngapain OM?");
+        });
+
+        // Menampilkan alert saat memilih teks
+        document.addEventListener('selectstart', function(e) {
+            alert("Mau ngapain OM?");
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Steg2crack</h1>
+        <img src="https://img.shields.io/badge/python-3.x-blue" alt="Python Version" class="badge">
+        <img src="https://img.shields.io/badge/license-MIT-green" alt="License" class="badge">
+        <img src="https://img.shields.io/github/repo-size/fixploit03/Steg2crack" alt="Repo Size" class="badge">
+        <img src="https://img.shields.io/github/issues/fixploit03/Steg2crack" alt="Issues" class="badge">
+        <img src="https://img.shields.io/github/forks/fixploit03/Steg2crack" alt="Forks" class="badge">
+        <img src="https://img.shields.io/github/stars/fixploit03/Steg2crack" alt="Stars" class="badge">
+        
+        <p><code>Steg2crack</code> adalah program <a href="https://python.org" target="_blank">Python</a> sederhana yang dirancang untuk meng-crack file <a href="https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1" target="_blank">stego</a> menggunakan teknik <a href="https://www.asdf.id/definisi-dictionary-attack-adalah/" target="_blank">Dictionary Attack</a>.</p>
+
+        <h2>Instalasi</h2>
+
+        <details>
+            <summary>Termux</summary>
+            <pre>
+<span class="comment"># Memperbaharui repositori Termux</span>
+$ pkg update
+
+<span class="comment"># Menginstal python3</span>
+$ pkg install python3
+
+<span class="comment"># Menginstal steghide</span>
+$ pkg install steghide
+
+<span class="comment"># Menginstal git</span>
+$ pkg install git
+
+<span class="comment"># Mengkloning repositori Steg2crack dari GitHub</span>
+$ git clone https://github.com/fixploit03/Steg2crack/
+            </pre>
+        </details>
+
+        <details>
+            <summary>Linux (Debian/Ubuntu)</summary>
+            <pre>
+<span class="comment"># Memperbaharui repositori Linux</span>
+$ sudo apt-get update
+
+<span class="comment"># Menginstal python3</span>
+$ sudo apt-get install python3
+
+<span class="comment"># Menginstal steghide</span>
+$ sudo apt-get install steghide
+
+<span class="comment"># Menginstal git</span>
+$ sudo apt-get install git
+
+<span class="comment"># Mengkloning repositori Steg2crack dari GitHub</span>
+$ git clone https://github.com/fixploit03/Steg2crack/
+            </pre>
+        </details>
+
+        <h2>Menjalankan Program</h2>
+        <pre>
+python3 main.py
+        </pre>
+
+        <h2>Lisensi</h2>
+        <p>Program ini dilisensikan di bawah <a href="https://github.com/fixploit03/steg2crack/blob/main/LICENSE" target="_blank">MIT License</a>.</p>
+
+        <h2>Penulis</h2>
+        <p><a href="https://github.com/fixploit03" target="_blank">fixploit03</a></p>
+
+        <p><strong>Catatan:</strong> Program ini hanya mendukung file stego yang dihasilkan oleh alat <a href="https://steghide.sourceforge.net/" target="_blank">Steghide</a>, sehingga mungkin tidak berfungsi dengan file stego yang dihasilkan oleh alat lain.</p>
+    </div>
+
+    <footer>
+        <p>Kunjungi repositori GitHub untuk lebih detail: <a href="https://github.com/fixploit03/Steg2crack" target="_blank">Steg2crack</a></p>
+    </footer>
+</body>
+  </html>
