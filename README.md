@@ -5,9 +5,9 @@
 ![Forks](https://img.shields.io/github/forks/fixploit03/steg2crack)
 ![Stars](https://img.shields.io/github/stars/fixploit03/steg2crack)
 
-# steg2crack :closed_lock_with_key:
+# Steg2crack :closed_lock_with_key:
 
-`steg2crack` adalah program Python sederhana yang dirancang untuk meng-crack file [stego](https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1) menggunakan teknik [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
+`Steg2crack` adalah program [Python](https://python.org) sederhana yang dirancang untuk meng-crack file [stego](https://www.kajianpustaka.com/2017/09/sejarah-prinsip-kerja-teknik-steganografi.html?m=1) menggunakan teknik [Dictionary Attack](https://www.asdf.id/definisi-dictionary-attack-adalah/).
 
 ## Instalasi :gear:
 
