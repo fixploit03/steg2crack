@@ -200,7 +200,8 @@ try:
                         nama_file_tersembunyi = cocok.group(1).strip()
                     waktu_akhir = datetime.now()
                     print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
-                    print(f"{p}[{h}+{p}] File yang disembunyikan: {h}{nama_file_tersembunyi}{r}") 
+                    if os.path.isfile(nama_file_tersembunyi);
+                        print(f"{p}[{h}+{p}] File yang disembunyikan: {h}{nama_file_tersembunyi}{r}") 
                     print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
                     kata_sandi_ditemukan = True 
                     break
