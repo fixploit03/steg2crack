@@ -30,6 +30,7 @@
 #------------------------------------------------------------------------------------------------------------------
 
 import os
+import re
 import subprocess           
 import time
 import platform
@@ -190,9 +191,16 @@ try:
             perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
                 hasil_perintah_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
-                if hasil_perintah_crack.returncode == 0:           
+                if hasil_perintah_crack.returncode == 0:   
+                    perintah_mencari_file_tersembunyi = f"steghide info {file_stego} -p {kata_sandi}"
+                    hasil_perintah_mencari_file_tersembunyi = subprocess.run(perintah_mencari_file_tersembunyi, shell=True, capture_output=True, text=True)
+                    if hasil_perintah_mencari_file_tersembunyi.returncode == 0:
+                        pola = r'embedded file "(.*?)":'
+                        cocok = re.search(pola, hasil_perintah_mencari_file_tersembunyi.stdout)
+                        nama_file_tersembunyi = cocok.group(1).strip()
                     waktu_akhir = datetime.now()
                     print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
+                    print(f"{p}[{h}+{p}] File yang disembunyikan: {h}{nama_file_tersembunyi}{r}") 
                     print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
                     kata_sandi_ditemukan = True 
                     break
