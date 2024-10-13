@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 #------------------------------------------------------------------------------------------------------------------
-## Program   : Steg2crack
-## Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file stego dengan teknik Dictionary Attack.
-## Pembuat   : fixploit03 
-## Rilis     : 5-10-2024
-## Github    : https://github.com/fixploit03/steg2crack/
+# Program   : Steg2crack
+# Deskripsi : Program Python sederhana yang dirancang untuk meng-crack file stego dengan teknik Dictionary Attack.
+# Pembuat   : fixploit03 
+# Rilis     : 5-10-2024
+# Github    : https://github.com/fixploit03/steg2crack/
 #------------------------------------------------------------------------------------------------------------------
 # MIT License
 # 
