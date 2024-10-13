@@ -176,7 +176,7 @@ print("")
 
 kata_sandi_ditemukan = False
 
-# Proses cracking file Steganografi
+# Proses cracking file stego
 try:
     with open(file_wordlist, "r", encoding="latin-1", errors="ignore") as fw:
         daftar_kata_sandi = fw.read().splitlines()
