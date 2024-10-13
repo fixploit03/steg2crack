@@ -189,8 +189,8 @@ try:
         for kata_sandi in daftar_kata_sandi:
             perintah_crack = f"steghide extract -sf {file_stego} -p {kata_sandi} -f"
             try:
-                hasil_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
-                if hasil_crack.returncode == 0:           
+                hasil_perintah_crack = subprocess.run(perintah_crack, shell=True, capture_output=True, text=True)
+                if hasil_perintah_crack.returncode == 0:           
                     waktu_akhir = datetime.now()
                     print(f"{p}[{h}+{p}] Kata sandi ditemukan : {h}{kata_sandi}{r}") 
                     print(f"\n{p}[{b}*{p}] Berakhir pada : {b}{waktu_akhir.strftime('%d-%m-%Y %H:%M:%S')}{r}")
