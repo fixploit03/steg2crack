@@ -2,6 +2,10 @@
   <h1>Steg2crack</h1>
 </div>
 
+<div>
+  <img src="https://github.com/fixploit03/Steg2crack/blob/main/20241014_002830.jpg"/>
+</div>
+
 <div align="center">
   <p>Buka Rahasia Steganografi!</p>
 </div>
