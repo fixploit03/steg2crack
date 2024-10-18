@@ -11,7 +11,7 @@
 </div>
 
 <div>
-  <p>Steg2crack adalah program Python yang dirancang untuk <b>mengungkap rahasia</b> tersembunyi di dalam file stego menggunakan teknik <b>Dictionary Attack</b>.</p>
+  <p><code>Steg2crack</code> adalah ini dirancang untuk melakukan cracking terhadap file stego menggunakan alat Steghide. Program ini ditujukan untuk mendekripsi file yang disembunyikan dalam file stego (.JPEG, .BMP, .WAV, dan .AU.) dengan mencoba berbagai kata sandi dari daftar yang disediakan (wordlist). </p>
 </div>
 
 ## 🚀 Fitur Utama
